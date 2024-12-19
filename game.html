@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Game</title>
+<link rel="stylesheet" href="gamee.css">
+</head>
+<body onload="getName()">
+  <h1 class="helloname" >hello to </h1>
+  <h2 id="textName"></h2>
+<div class="container">
+ 
+  <img src="תמונות/אייקונים/home.png" onclick="redirectHome()" class="home-link" alt="Home">
+
+    <title>בחר את גודל הלוח</title>
+      <label for="tableSize">💚בחר את גודל הלוח</label>
+      <select id="tableSize" onchange="setTimer(this.value) ;createTable()">
+        <option value="4">4x4</option>
+        <option value="6">6x6</option>
+      </select><br><br>
+      <label>בחר נושא למשחק</label>
+      <select  id="select" onchange="chooseTopics()">
+        <option value="cars" >רכבים</option>
+        <option value="sentences"> משפטים</option>
+      </select>
+      <div id="sad-images"></div>
+
+    </div>
+      <!-- מוזיקה למשך כל המשחק -->
+      <div class="musicContainer">
+<p>Music</p>
+<div class="btn-bg">
+  <input type="checkbox" onclick="playMusic()" id="button_music" checked>
+  <div class="btn-in">
+    <span class="on">on</span>
+    <span class="off">off</span>
+  </div>
+</div>
+     
+</div>
+  <div class="memory-game">
+    <div class="card" id="card"></div>
+    <button onclick="resetGame()">Reset Game</button>
+  </div>
+
+  <audio id="winSound">
+    <source src="bisyun.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="winSoundlast">
+  <source src="כפיים נלהבות.WAV" type="audio/WAV">
+</audio>
+
+
+<div id="timer"></div>
+
+
+<table class="memory-game"></table>
+<script src="game-js.js"></script>
+</body>
+</html>
+
+
